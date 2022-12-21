@@ -42,7 +42,7 @@ public class HttpClientHdfsUtils {
                 fileSystem.mkdirs(path);
             }
             //在指定目录下创建文件
-            FSDataOutputStream fsDataOutputStream = fileSystem.create(new Path(path.toString()+"/"+fileName));
+            FSDataOutputStream fsDataOutputStream = fileSystem.create(new Path(path +"/"+fileName));
             //向文件中写入数据
             IOUtils.copyBytes(new ByteArrayInputStream(data.getBytes()),
                     fsDataOutputStream, conf, true);
